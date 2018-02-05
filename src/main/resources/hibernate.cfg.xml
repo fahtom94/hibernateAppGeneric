@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Create table if not exists -->
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+        <!-- The JDBC driver of your database -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <!-- Indicate the database to generate suitable SQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <!-- The JDBC URL to the database instance -->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/testdb</property>
+        <!-- The database username -->
+        <property name="hibernate.connection.username">postgres</property>
+        <!-- The database password -->
+        <property name="hibernate.connection.password">root</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <!-- Mapping class -->
+        <mapping class="entity.User"></mapping>
+    </session-factory>
+</hibernate-configuration>
